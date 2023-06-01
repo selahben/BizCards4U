@@ -1,7 +1,6 @@
 /*Global*/
 * {
   font-family: "Merienda", cursive;
-  transition: all 0.5s ease-in-out;
 }
 
 /*Header*/
@@ -11,6 +10,9 @@
 #header .navbar-toggler {
   font-size: 14px;
   padding: 2px 5px;
+}
+#mainNav {
+  transition: all 0.2s ease-in-out;
 }
 
 /*Content and General Styles*/
@@ -56,6 +58,12 @@
 }
 .card .links span {
   font-size: 12px;
+}
+/*Cards- Mobile*/
+@media (max-width: 767px) {
+  .card {
+    width: 90% !important;
+  }
 }
 
 /*Card Full View*/
