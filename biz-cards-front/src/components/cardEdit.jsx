@@ -3,6 +3,7 @@ import { Input } from "./common/input";
 import { PageHeader } from "./common/pageHeader";
 import Joi from "joi";
 import { formikValidateUsingJoi } from "../utils/formikValidateUsingJoi";
+import { Map } from "./common/map";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -13,6 +14,7 @@ export function CardEdit({ redirect = "/" }) {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const { id } = useParams();
+  const [mapAddress, setMapAddress] = useState("");
 
   const form = useFormik({
     validateOnMount: true,
@@ -82,10 +84,14 @@ export function CardEdit({ redirect = "/" }) {
     getCardAndSetValues();
   }, [id]);
 
+  useEffect(() => {
+    setMapAddress(form.values.bizAddress);
+  }, [form.values.bizAddress]);
+
   return (
     <div className="container">
       <PageHeader title="Edit Card" description="Edit Your Business Card" />
-      <form onSubmit={form.handleSubmit} noValidate>
+      <form id="cardForm" onSubmit={form.handleSubmit} noValidate>
         {error && <div className="alert alert-danger">{error}</div>}
         <Input
           {...form.getFieldProps("bizName")}
@@ -111,6 +117,7 @@ export function CardEdit({ redirect = "/" }) {
           required
           error={form.touched.bizAddress && form.errors.bizAddress}
         />
+        {mapAddress && <Map address={mapAddress} page="editCard" />}
         <Input
           {...form.getFieldProps("bizPhone")}
           label="Business Phone"

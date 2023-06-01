@@ -3,16 +3,17 @@ import { Input } from "./common/input";
 import { PageHeader } from "./common/pageHeader";
 import Joi from "joi";
 import { formikValidateUsingJoi } from "../utils/formikValidateUsingJoi";
-import { useNavigate, Navigate } from "react-router-dom";
-import { useState } from "react";
-//import { useAuth } from "../context/auth.context";
+import { Map } from "./common/map";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+
 import { toast } from "react-toastify";
 import { createCard } from "../services/cardsService";
 
 export function CardCreate({ redirect = "/" }) {
   const [error, setError] = useState("");
+  const [mapAddress, setMapAddress] = useState("");
   const navigate = useNavigate();
-  // const { user, createUser } = useAuth();
 
   const form = useFormik({
     validateOnMount: true,
@@ -70,13 +71,17 @@ export function CardCreate({ redirect = "/" }) {
     },
   });
 
+  useEffect(() => {
+    setMapAddress(form.values.bizAddress);
+  }, [form.values.bizAddress]);
+
   return (
     <div className="container">
       <PageHeader
         title="Create new Card"
         description="Create a new Business Card"
       />
-      <form onSubmit={form.handleSubmit} noValidate>
+      <form id="cardForm" onSubmit={form.handleSubmit} noValidate>
         {error && <div className="alert alert-danger">{error}</div>}
         <Input
           {...form.getFieldProps("bizName")}
@@ -102,6 +107,8 @@ export function CardCreate({ redirect = "/" }) {
           required
           error={form.touched.bizAddress && form.errors.bizAddress}
         />
+        {mapAddress && <Map address={mapAddress} page="createCard" />}
+
         <Input
           {...form.getFieldProps("bizPhone")}
           label="Business Phone"

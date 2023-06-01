@@ -74,7 +74,7 @@ After signing in to a Business Account, you will see your recent cards in the Ho
 4. "Joi" is used for form fields validation.
 5. Within "React", useState, useEffect and useContext and Custom Hooks were used to build the site.
 6. "React-Router-Dom" was used for routing and url options.
-7. Google maps react libraries were used to add maps to cards in full view.
+7. Google maps react libraries were used to add maps to cards in "Create Card", "Edit Card" and "Full View".
 8. "Axios" was used to handle http requests.
 9. Google fonts was used for fonts.
 10. "Toastify" was used for various alerts.

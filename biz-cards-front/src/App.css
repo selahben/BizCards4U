@@ -29,10 +29,13 @@
   vertical-align: top;
 }
 
-/*Home*/
-/* #homeCards .card .links {
-  display: none !important;
-} */
+/*Card Forms*/
+#cardForm #googleMap .map-container {
+  margin: 0;
+}
+#cardForm #googleMap #mapError {
+  margin: 0 !important;
+}
 
 /*My Cards*/
 #newCardBTN {
@@ -60,6 +63,8 @@
   position: fixed;
   top: 65px;
   z-index: 99;
+  box-shadow: 0 0 10px 0 #2e8753;
+  border: 1px solid white;
 }
 #fullCardTop {
   padding: 100px 0;
@@ -68,6 +73,7 @@
   width: 100%;
   margin: 10px auto;
   border-radius: 20px;
+  box-shadow: 0 0 10px 0 #ffffff;
 }
 #googleMap .map-container {
   width: 50%;
@@ -106,5 +112,5 @@ html[data-bs-theme="dark"] p {
   color: white;
 }
 html[data-bs-theme="dark"] #mainOverlap {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
 }

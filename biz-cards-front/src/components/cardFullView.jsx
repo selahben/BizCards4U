@@ -39,7 +39,9 @@ export function CardFullView() {
             id="fullCardTop"
             style={{ backgroundImage: `url(${card.bizImage})` }}
           ></div>
-          <h1 id="fullCardName">{card.bizName}</h1>
+          <h1 id="fullCardName" className="mt-4">
+            {card.bizName}
+          </h1>
           <p id="fullCardDescription" className="mt-4 mb-5">
             {card.bizDescription}
           </p>
@@ -55,7 +57,7 @@ export function CardFullView() {
             <i className="bi bi-geo-alt-fill"></i>
             <span className="ms-2">Find Us at: {card.bizAddress}</span>
           </p>
-          <Map address={card.bizAddress} />
+          <Map address={card.bizAddress} page="fullView" />
         </div>
       )}
     </>
