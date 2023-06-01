@@ -4,13 +4,16 @@ import { useEffect, useState } from "react";
 
 export function Navbar() {
   const { user } = useAuth();
+
+  /*Light/Dark Mode BTN Functionality*/
   const [themeMode, setThemeMode] = useState("light");
-
   const htmlTag = document.getElementsByTagName("html")[0];
-
   useEffect(() => {
     htmlTag.setAttribute("data-bs-theme", themeMode);
   }, [themeMode]);
+
+  /*Mobile navbar collapse functionality*/
+  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
 
   return (
     <nav
@@ -29,20 +32,33 @@ export function Navbar() {
           aria-controls="mainNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          onClick={() => setIsNavCollapsed(!isNavCollapsed)}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse" id="mainNav">
+        <div
+          className={`collapse navbar-collapse ${!isNavCollapsed && "show"}`}
+          id="mainNav"
+        >
           <ul className="navbar-nav mx-auto mb-2 mb-sm-0">
             <li className="nav-item">
-              <NavLink className="nav-link" aria-current="page" to="about">
+              <NavLink
+                className="nav-link"
+                aria-current="page"
+                to="about"
+                onClick={() => setIsNavCollapsed(true)}
+              >
                 About
               </NavLink>
             </li>
             {user?.biz && (
               <li className="nav-item">
-                <NavLink className="nav-link" to="/my-cards">
+                <NavLink
+                  className="nav-link"
+                  to="/my-cards"
+                  onClick={() => setIsNavCollapsed(true)}
+                >
                   My Cards
                 </NavLink>
               </li>
@@ -51,14 +67,22 @@ export function Navbar() {
           <ul className="navbar-nav mx-auto mb-2 mb-sm-0">
             {user ? (
               <li className="nav-item">
-                <NavLink className="nav-link" to="/sign-out">
+                <NavLink
+                  className="nav-link"
+                  to="/sign-out"
+                  onClick={() => setIsNavCollapsed(true)}
+                >
                   Sign Out
                 </NavLink>
               </li>
             ) : (
               <>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/sign-in">
+                  <NavLink
+                    className="nav-link"
+                    to="/sign-in"
+                    onClick={() => setIsNavCollapsed(true)}
+                  >
                     Sign In
                   </NavLink>
                 </li>
@@ -67,6 +91,7 @@ export function Navbar() {
                     className="nav-link"
                     aria-current="page"
                     to="/sign-up"
+                    onClick={() => setIsNavCollapsed(true)}
                   >
                     Sign Up
                   </NavLink>
@@ -99,7 +124,10 @@ export function Navbar() {
 
         <button
           className="btn"
-          onClick={() => setThemeMode(themeMode === "light" ? "dark" : "light")}
+          onClick={() => {
+            setThemeMode(themeMode === "light" ? "dark" : "light");
+            setIsNavCollapsed(true);
+          }}
         >
           {themeMode === "light" ? (
             <i className="bi bi-moon"></i>
