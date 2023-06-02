@@ -4,15 +4,30 @@
 }
 
 /*Header*/
-#header {
+header {
   z-index: 99;
 }
-#header .navbar-toggler {
+header .navbar-toggler {
   font-size: 14px;
   padding: 2px 5px;
 }
+@media (min-width: 768px) {
+  #navContainer {
+    width: 80%;
+  }
+}
 #mainNav {
   transition: all 0.2s ease-in-out;
+}
+@media (max-width: 767px) {
+  #mainNav {
+    position: fixed;
+    width: 100vw;
+    background: #eedaff;
+    left: 0;
+    top: 57px;
+    padding-left: 20px;
+  }
 }
 
 /*Content and General Styles*/
@@ -105,12 +120,12 @@
 }
 
 /*Light Mode*/
-html[data-bs-theme="light"] nav,
+html[data-bs-theme="light"] header,
 html[data-bs-theme="light"] footer {
   background-color: #efdaff;
 }
 /*Dark Mode*/
-html[data-bs-theme="dark"] nav,
+html[data-bs-theme="dark"] header,
 html[data-bs-theme="dark"] footer {
   background-color: black;
 }

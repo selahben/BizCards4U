@@ -18,6 +18,7 @@ import { CardCreate } from "./components/cardCreate";
 import { CardDelete } from "./components/cardDelete";
 import { CardEdit } from "./components/cardEdit";
 import { CardFullView } from "./components/cardFullView";
+import { Header } from "./components/header";
 
 function App() {
   return (
@@ -35,9 +36,9 @@ function App() {
         theme="colored"
         transition={Zoom}
       />
-      <header>
-        <Navbar />
-      </header>
+
+      <Header />
+
       <div id="main" className="flex-fill d-flex flex-column mt-5">
         <div id="mainOverlap" className="p-2 flex-fill flex-column d-flex">
           <Routes>
