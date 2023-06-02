@@ -1,0 +1,19 @@
+/*Light Mode*/
+html[data-bs-theme="light"] header,
+html[data-bs-theme="light"] footer {
+  background-color: #efdaff;
+}
+/*Dark Mode*/
+html[data-bs-theme="dark"] header,
+html[data-bs-theme="dark"] footer {
+  background-color: black;
+}
+html[data-bs-theme="dark"] h1,
+html[data-bs-theme="dark"] h3,
+html[data-bs-theme="dark"] h5,
+html[data-bs-theme="dark"] p {
+  color: white;
+}
+html[data-bs-theme="dark"] #mainOverlap {
+  background-color: rgba(0, 0, 0, 0.7);
+}

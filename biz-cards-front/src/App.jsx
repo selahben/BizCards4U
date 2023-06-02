@@ -1,7 +1,8 @@
-//import logo from "./logo.svg";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
-import { Navbar } from "./components/navbar";
+import "./lightDark.css";
+import "./googleMaps.css";
+
 import { Footer } from "./components/footer";
 import { Home } from "./components/home";
 import { About } from "./components/about";

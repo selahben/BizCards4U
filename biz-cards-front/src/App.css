@@ -3,7 +3,7 @@
   font-family: "Merienda", cursive;
 }
 
-/*Header*/
+/*Header and Navbar*/
 header {
   z-index: 99;
 }
@@ -45,14 +45,6 @@ header .navbar-toggler {
 .ltdSign {
   font-size: 18px;
   vertical-align: top;
-}
-
-/*Card Forms*/
-#cardForm #googleMap .map-container {
-  margin: 0;
-}
-#cardForm #googleMap #mapError {
-  margin: 0 !important;
 }
 
 /*My Cards*/
@@ -99,42 +91,7 @@ header .navbar-toggler {
   border-radius: 20px;
   box-shadow: 0 0 10px 0 #ffffff;
 }
-#googleMap .map-container {
-  width: 50%;
-  height: 300px;
-  margin: auto;
-}
-#mapError {
-  width: 50%;
-}
-/*Card Full View- Mobile*/
-@media (max-width: 767px) {
-  #googleMap .map-container {
-    width: 95%;
-    height: 300px;
-    margin: auto;
-  }
-  #mapError {
-    width: 80%;
-  }
-}
 
-/*Light Mode*/
-html[data-bs-theme="light"] header,
-html[data-bs-theme="light"] footer {
-  background-color: #efdaff;
-}
-/*Dark Mode*/
-html[data-bs-theme="dark"] header,
-html[data-bs-theme="dark"] footer {
-  background-color: black;
-}
-html[data-bs-theme="dark"] h1,
-html[data-bs-theme="dark"] h3,
-html[data-bs-theme="dark"] h5,
-html[data-bs-theme="dark"] p {
+.googleMapLabel {
   color: white;
-}
-html[data-bs-theme="dark"] #mainOverlap {
-  background-color: rgba(0, 0, 0, 0.7);
 }

@@ -1,0 +1,27 @@
+/*In Card Forms*/
+#cardForm #googleMap .map-container {
+  margin: 0;
+}
+#cardForm #googleMap #mapError {
+  margin: 0 !important;
+}
+
+/*In Cards Full View*/
+#googleMap .map-container {
+  width: 50%;
+  height: 300px;
+  margin: auto;
+}
+#mapError {
+  width: 50%;
+}
+@media (max-width: 767px) {
+  #googleMap .map-container {
+    width: 95%;
+    height: 300px;
+    margin: auto;
+  }
+  #mapError {
+    width: 80%;
+  }
+}
