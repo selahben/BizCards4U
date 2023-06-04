@@ -1,11 +1,22 @@
 import { useEffect, useState } from "react";
 
 export function BsLightDarkMode() {
-  const [themeMode, setThemeMode] = useState("light");
   const htmlTag = document.getElementsByTagName("html")[0];
-  htmlTag.setAttribute("data-bs-theme", themeMode);
+  const [themeMode, setThemeMode] = useState(getTheme());
+
+  function getTheme() {
+    const localThemeState = localStorage.getItem("themeState");
+
+    if (!localThemeState) {
+      return "light";
+    } else {
+      return localThemeState;
+    }
+  }
+
   useEffect(() => {
     htmlTag.setAttribute("data-bs-theme", themeMode);
+    localStorage.setItem("themeState", themeMode);
   }, [themeMode]);
 
   return (
