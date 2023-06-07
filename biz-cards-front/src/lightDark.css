@@ -17,3 +17,8 @@ html[data-bs-theme="dark"] p {
 html[data-bs-theme="dark"] #mainOverlap {
   background-color: rgba(0, 0, 0, 0.7);
 }
+
+html[data-bs-theme="dark"] h5.card-title:before,
+html[data-bs-theme="dark"] h5.card-title:after {
+  background-color: white;
+}

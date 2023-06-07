@@ -6,7 +6,7 @@ export function NavbarFooter() {
 
   return (
     <nav id="footerNav" className="navbar">
-      <div className="container justify-content-center gap-md-4 gap-1 flex-column flex-md-row">
+      <div className="navbar-nav container justify-content-center gap-md-4 gap-1 flex-column flex-md-row">
         <Link className="navbar-brand me-0 p-0" to="/">
           <i className="bi bi-card-heading me-2"></i>
           <span>BizCards4U</span>

@@ -7,7 +7,7 @@ export const Card = ({
     <div className="card" style={{ width: "18rem" }}>
       <img src={bizImage} alt={bizName} className="card-img-top mt-2" />
       <div className="card-body">
-        <h5 className="card-title">{bizName}</h5>
+        <h5 className="card-title text-center">{bizName}</h5>
         <p className="card-text">{bizDescription}</p>
         <ul className="list-group list-group-flush">
           <li className="list-group-item ps-0">
