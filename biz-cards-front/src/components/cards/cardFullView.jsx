@@ -1,8 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import { getCard } from "../services/cardsService";
-import { Map } from "./common/map";
+import { getCard } from "../../services/cardsService";
+import { Map } from "../common/map";
 
 export function CardFullView() {
   const [card, setCard] = useState();

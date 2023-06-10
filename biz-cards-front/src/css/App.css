@@ -1,0 +1,86 @@
+/*Global*/
+* {
+  font-family: "Imbue", serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+p {
+  font-size: 22px;
+}
+h1 {
+  font-size: 55px !important;
+}
+a.active {
+  font-size: 20px;
+}
+
+/*Header and Navbar*/
+header {
+  z-index: 99;
+}
+header .navbar-toggler {
+  font-size: 14px;
+  padding: 2px 5px;
+}
+@media (min-width: 768px) {
+  #navContainer {
+    width: 80%;
+  }
+}
+#mainNav {
+  transition: all 0.2s ease-in-out;
+}
+.footerSocial a {
+  line-height: 1em;
+}
+@media (max-width: 767px) {
+  #mainNav {
+    position: fixed;
+    width: 100vw;
+    background: #ffdd43;
+    left: 0;
+    top: 57px;
+    padding-left: 20px;
+  }
+}
+
+/*Content and General Styles*/
+#main {
+  background-image: url("../../public/images/bizCardsBG-2.jpg");
+  background-position: top left;
+  background-size: 20%;
+  position: relative;
+  overflow-x: hidden;
+}
+#mainOverlap {
+  width: 100%;
+  /* background-color: rgba(255, 255, 255, 0.7); */
+  background: rgb(255, 255, 255);
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+}
+.ltdSign {
+  font-size: 18px;
+  vertical-align: top;
+}
+/*Content and General Styles - Mobile*/
+@media (max-width: 767px) {
+  #main {
+    background-size: 100%;
+  }
+}

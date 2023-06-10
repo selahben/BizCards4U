@@ -4,9 +4,9 @@ export const Card = ({
   card: { _id, bizName, bizDescription, bizAddress, bizPhone, bizImage },
 }) => {
   return (
-    <div className="card" style={{ width: "18rem" }}>
+    <div className="card" style={{ width: "20rem" }}>
       <img src={bizImage} alt={bizName} className="card-img-top mt-2" />
-      <div className="card-body">
+      <div className="card-body px-0">
         <h5 className="card-title text-center">{bizName}</h5>
         <p className="card-text">{bizDescription}</p>
         <ul className="list-group list-group-flush">
@@ -21,7 +21,7 @@ export const Card = ({
         </ul>
         <div className="links d-flex justify-content-between mt-2">
           <Link to={`/my-cards/view/${_id}`}>
-            <span className="btn btn-secondary">
+            <span className="btn btn-success">
               <i className="bi bi-eye me-1"></i>View
             </span>
           </Link>

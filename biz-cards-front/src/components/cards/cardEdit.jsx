@@ -1,19 +1,20 @@
 import { useFormik } from "formik";
-import { Input } from "./common/input";
-import { PageHeader } from "./common/pageHeader";
+import { Input } from "../common/input";
+import { PageHeader } from "../common/pageHeader";
 import Joi from "joi";
-import { formikValidateUsingJoi } from "../utils/formikValidateUsingJoi";
-import { Map } from "./common/map";
-import { useNavigate } from "react-router-dom";
+import { formikValidateUsingJoi } from "../../utils/formikValidateUsingJoi";
+import { Map } from "../common/map";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import { toast } from "react-toastify";
-import { createCard } from "../services/cardsService";
+import { getCard, updateCard } from "../../services/cardsService";
 
-export function CardCreate({ redirect = "/" }) {
+export function CardEdit({ redirect = "/" }) {
   const [error, setError] = useState("");
-  const [mapAddress, setMapAddress] = useState("");
   const navigate = useNavigate();
+  const { id } = useParams();
+  const [mapAddress, setMapAddress] = useState("");
 
   const form = useFormik({
     validateOnMount: true,
@@ -59,9 +60,8 @@ export function CardCreate({ redirect = "/" }) {
         if (values.bizImage) {
           cardInfo = { ...cardInfo, bizImage: values.bizImage };
         }
-
-        await createCard(cardInfo);
-        toast.success("Card Successfully Added..");
+        await updateCard(id, cardInfo);
+        toast.success("Card Updated Successfully..");
         navigate(redirect);
       } catch ({ response }) {
         if (response && response.status === 400) {
@@ -72,15 +72,25 @@ export function CardCreate({ redirect = "/" }) {
   });
 
   useEffect(() => {
+    const getCardAndSetValues = async () => {
+      const { data } = await getCard(id);
+
+      form.setFieldValue("bizName", data.bizName);
+      form.setFieldValue("bizDescription", data.bizDescription);
+      form.setFieldValue("bizAddress", data.bizAddress);
+      form.setFieldValue("bizPhone", data.bizPhone);
+      form.setFieldValue("bizImage", data.bizImage);
+    };
+    getCardAndSetValues();
+  }, [id]);
+
+  useEffect(() => {
     setMapAddress(form.values.bizAddress);
   }, [form.values.bizAddress]);
 
   return (
     <div className="container">
-      <PageHeader
-        title="Create new Card"
-        description="Create a new Business Card"
-      />
+      <PageHeader title="Edit Card" description="Edit Your Business Card" />
       <form id="cardForm" onSubmit={form.handleSubmit} noValidate>
         {error && <div className="alert alert-danger">{error}</div>}
         <Input
@@ -107,8 +117,7 @@ export function CardCreate({ redirect = "/" }) {
           required
           error={form.touched.bizAddress && form.errors.bizAddress}
         />
-        {mapAddress && <Map address={mapAddress} page="createCard" />}
-
+        {mapAddress && <Map address={mapAddress} page="editCard" />}
         <Input
           {...form.getFieldProps("bizPhone")}
           label="Business Phone"
@@ -130,7 +139,7 @@ export function CardCreate({ redirect = "/" }) {
             disabled={!form.isValid}
             className="btn btn-primary"
           >
-            Create Card
+            Submit Changes
           </button>
         </div>
       </form>

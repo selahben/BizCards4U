@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { useAuth } from "../context/auth.context";
+import { useAuth } from "../../context/auth.context";
 import { useState } from "react";
 
 export function Navbar() {
@@ -9,7 +9,7 @@ export function Navbar() {
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
 
   return (
-    <nav id="navContainer" className="navbar navbar-expand-sm gap-5">
+    <nav id="navContainer" className="navbar navbar-expand-sm gap-2 gap-md-5">
       <Link className="navbar-brand me-0" to="/">
         <i className="bi bi-card-heading me-2"></i>BizCards4U
       </Link>

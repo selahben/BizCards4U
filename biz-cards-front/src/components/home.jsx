@@ -1,6 +1,6 @@
 import { PageHeader } from "./common/pageHeader";
 import { useMyCards } from "../hooks/useMyCards";
-import { Card } from "./card";
+import { Card } from "./cards/card";
 import { useAuth } from "../context/auth.context";
 import { Link } from "react-router-dom";
 
@@ -54,7 +54,7 @@ export function Home() {
           )}
           {user?.biz && (
             <>
-              <p className="text-center fw-bold fs-5">
+              <p className="text-center fw-normal fs-5">
                 Go to 'My Cards' Page to VIEW all your Cards, EDIT or DELETE
                 them, and to CREATE new ones..
               </p>

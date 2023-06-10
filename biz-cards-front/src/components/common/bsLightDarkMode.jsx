@@ -8,7 +8,7 @@ export function BsLightDarkMode() {
     const localThemeState = localStorage.getItem("themeState");
 
     if (!localThemeState) {
-      return "light";
+      return "dark";
     } else {
       return localThemeState;
     }
@@ -21,7 +21,7 @@ export function BsLightDarkMode() {
 
   return (
     <button
-      className="btn"
+      className="btn lightDarkSwitchBtn"
       onClick={() => {
         setThemeMode(themeMode === "light" ? "dark" : "light");
       }}

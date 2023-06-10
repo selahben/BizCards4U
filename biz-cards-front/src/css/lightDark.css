@@ -1,0 +1,89 @@
+/*Light Mode*/
+/*Header and Footer*/
+html[data-bs-theme="light"] header,
+html[data-bs-theme="light"] footer {
+  background: #ffd65e; /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    #ffd65e 0%,
+    #febf04 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #ffd65e 0%,
+    #febf04 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #ffd65e 0%,
+    #febf04 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', endColorstr='#febf04',GradientType=0 ); /* IE6-9 */
+}
+
+/*Dark Mode*/
+/*General*/
+html[data-bs-theme="dark"] h1,
+html[data-bs-theme="dark"] h3,
+html[data-bs-theme="dark"] h5,
+html[data-bs-theme="dark"] p {
+  color: white;
+}
+html[data-bs-theme="dark"] .text-danger {
+  color: red !important;
+  text-shadow: 0px 1px 0px #ffffff80;
+}
+/*Header and Footer*/
+html[data-bs-theme="dark"] header,
+html[data-bs-theme="dark"] footer {
+  background: #eab92d; /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    #eab92d 0%,
+    #c79810 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #eab92d 0%,
+    #c79810 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #eab92d 0%,
+    #c79810 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eab92d', endColorstr='#c79810',GradientType=0 ); /* IE6-9 */
+}
+html[data-bs-theme="dark"] .lightDarkSwitchBtn {
+  color: #ffffff;
+}
+
+/*Footer Icons*/
+html[data-bs-theme="dark"] .footerSocial a {
+  color: white;
+}
+
+html[data-bs-theme="dark"] #mainOverlap {
+  background: rgb(0, 0, 0);
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+}
+
+html[data-bs-theme="dark"] h5.card-title:before,
+html[data-bs-theme="dark"] h5.card-title:after {
+  background-color: white;
+}

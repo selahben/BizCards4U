@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
-import cardsService from "../services/cardsService";
+import cardsService from "../../services/cardsService";
 import { toast } from "react-toastify";
 
 export const CardDelete = () => {

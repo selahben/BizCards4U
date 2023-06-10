@@ -1,25 +1,26 @@
 import "react-toastify/dist/ReactToastify.css";
-import "./App.css";
-import "./lightDark.css";
-import "./googleMaps.css";
+import "./css/App.css";
+import "./css/lightDark.css";
+import "./css/googleMaps.css";
+import "./css/cards.css";
 
-import { Footer } from "./components/footer";
+import { Footer } from "./components/footer/footer";
 import { Home } from "./components/home";
 import { About } from "./components/about";
 import { Route, Routes } from "react-router-dom";
-import { SignUp } from "./components/signup";
-import { SignIn } from "./components/signin";
-import { SignOut } from "./components/signout";
+import { SignUp } from "./components/signUpInOut/signup";
+import { SignIn } from "./components/signUpInOut/signin";
+import { SignOut } from "./components/signUpInOut/signout";
 
-import { MyCards } from "./components/cards";
+import { MyCards } from "./components/cards/cards";
 import { ProtectedRoute } from "./components/common/protectedRoute";
 import { ToastContainer, Zoom } from "react-toastify";
 
-import { CardCreate } from "./components/cardCreate";
-import { CardDelete } from "./components/cardDelete";
-import { CardEdit } from "./components/cardEdit";
-import { CardFullView } from "./components/cardFullView";
-import { Header } from "./components/header";
+import { CardCreate } from "./components/cards/cardCreate";
+import { CardDelete } from "./components/cards/cardDelete";
+import { CardEdit } from "./components/cards/cardEdit";
+import { CardFullView } from "./components/cards/cardFullView";
+import { Header } from "./components/header/header";
 
 function App() {
   return (
