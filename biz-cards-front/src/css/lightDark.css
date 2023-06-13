@@ -77,7 +77,7 @@ html[data-bs-theme="dark"] #mainOverlap {
   );
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.7) 0%,
+    rgba(152, 118, 20, 0.8) 0%,
     rgba(0, 0, 0, 1) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);

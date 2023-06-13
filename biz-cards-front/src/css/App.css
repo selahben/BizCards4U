@@ -47,7 +47,7 @@ header .navbar-toggler {
 
 /*Content and General Styles*/
 #main {
-  background-image: url("../../public/images/bizCardsBG-2.jpg");
+  background-image: url("../../public/images/bizCardsBG-3.jpg");
   background-position: top left;
   background-size: 20%;
   position: relative;
@@ -55,21 +55,20 @@ header .navbar-toggler {
 }
 #mainOverlap {
   width: 100%;
-  /* background-color: rgba(255, 255, 255, 0.7); */
   background: rgb(255, 255, 255);
   background: -moz-linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.2) 0%,
     rgba(255, 255, 255, 1) 100%
   );
   background: -webkit-linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.2) 0%,
     rgba(255, 255, 255, 1) 100%
   );
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.7) 0%,
+    rgba(255, 255, 255, 0.2) 0%,
     rgba(255, 255, 255, 1) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);

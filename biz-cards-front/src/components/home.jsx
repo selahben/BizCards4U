@@ -3,6 +3,7 @@ import { useMyCards } from "../hooks/useMyCards";
 import { Card } from "./cards/card";
 import { useAuth } from "../context/auth.context";
 import { Link } from "react-router-dom";
+import { exampleCards } from "../exampleCards";
 
 export function Home() {
   const { user } = useAuth();
@@ -24,14 +25,19 @@ export function Home() {
           className="row d-flex justify-content-center gap-2 my-4"
         >
           <h2 className="text-decoration-underline text-center">
-            Your Recent Business Cards
+            {!user || !user.biz
+              ? "Example Cards"
+              : "Your Recent Business Cards"}
           </h2>
           {!user || !user.biz ? (
-            <div>
-              <p className="text-center text-danger fw-bold fs-5">
-                Unable to show any cards..
+            <>
+              {exampleCards.map((card) => (
+                <Card key={card._id} card={card} isBiz={false} />
+              ))}
+              <p className="text-center text-danger fw-bold fs-5 mb-0 mt-2">
+                Unable to show your cards..
               </p>
-              <p className="text-center text-danger fw-bold">
+              <p className="text-center text-danger fw-bold mb-0">
                 You are NOT SIGNED IN to a BUSINESS ACCOUNT or you're NOT SIGNED
                 IN AT ALL.
               </p>
@@ -39,7 +45,7 @@ export function Home() {
                 Please SIGN UP as a BUSINESS to create, edit and view your
                 cards..
               </p>
-            </div>
+            </>
           ) : !cards?.length ? (
             <p className="text-center fw-bold fs-5">
               No Cards Yet. Go to 'My Cards' Page and create some..

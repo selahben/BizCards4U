@@ -13,12 +13,12 @@ export function CardFullView() {
   useEffect(() => {
     const getCardInfo = async () => {
       const { data } = await getCard(id);
-      if (
-        data.bizImage ===
-        "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-      ) {
-        data.bizImage = "/images/CardTopDefaultBG.jpg";
-      }
+      // if (
+      //   data.bizImage ===
+      //   "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+      // ) {
+      //   data.bizImage = "/images/CardTopDefaultBG.jpg";
+      // }
       setCard(data);
     };
     getCardInfo();
