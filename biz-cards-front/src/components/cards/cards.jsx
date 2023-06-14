@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { PageHeader } from "../common/pageHeader";
 import { useMyCards } from "../../hooks/useMyCards";
 import { Card } from "./card";
+import { CardsMapping } from "../common/cardsMapping";
 
 export function MyCards() {
   const cards = useMyCards();
@@ -28,7 +29,7 @@ export function MyCards() {
         {!cards?.length ? (
           <p className="text-center fw-bold fs-3 mt-3">No Cards Yet..</p>
         ) : (
-          cards.map((card) => <Card key={card._id} card={card} />)
+          <CardsMapping cards={cards} />
         )}
       </div>
     </>

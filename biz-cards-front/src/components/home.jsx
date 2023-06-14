@@ -4,6 +4,7 @@ import { Card } from "./cards/card";
 import { useAuth } from "../context/auth.context";
 import { Link } from "react-router-dom";
 import { exampleCards } from "../exampleCards";
+import { CardsMapping } from "./common/cardsMapping";
 
 export function Home() {
   const { user } = useAuth();
@@ -31,9 +32,7 @@ export function Home() {
           </h2>
           {!user || !user.biz ? (
             <>
-              {exampleCards.map((card) => (
-                <Card key={card._id} card={card} isBiz={false} />
-              ))}
+              <CardsMapping cards={exampleCards} isBiz={false} />
               <p className="text-center text-danger fw-bold fs-5 mb-0 mt-2">
                 Unable to show your cards..
               </p>
@@ -51,12 +50,11 @@ export function Home() {
               No Cards Yet. Go to 'My Cards' Page and create some..
             </p>
           ) : (
-            cards.toReversed().map((card, index) => {
-              if (index <= 3) {
-                return <Card key={card._id} card={card} />;
-              }
-              return null;
-            })
+            <CardsMapping
+              cards={cards}
+              isReversed={true}
+              numOfCardsToShow={4}
+            />
           )}
           {user?.biz && (
             <>
