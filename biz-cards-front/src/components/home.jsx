@@ -1,6 +1,5 @@
 import { PageHeader } from "./common/pageHeader";
 import { useMyCards } from "../hooks/useMyCards";
-import { Card } from "./cards/card";
 import { useAuth } from "../context/auth.context";
 import { Link } from "react-router-dom";
 import { exampleCards } from "../exampleCards";

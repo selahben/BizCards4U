@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { PageHeader } from "../common/pageHeader";
 import { useMyCards } from "../../hooks/useMyCards";
-import { Card } from "./card";
 import { CardsMapping } from "../common/cardsMapping";
 
 export function MyCards() {
